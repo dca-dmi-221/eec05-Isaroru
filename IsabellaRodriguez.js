@@ -4,9 +4,12 @@
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-   // :)
+   let arr = testWord.split('');
+   arr.sort(function desordenar(){ return Math.random() -0.5})
+   console.log(arr)
 }
 wordCutter(testWord);
+
 
 /*Dado un string buscar en un listado e indicar si se encuentra o no
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
@@ -27,9 +30,10 @@ let testWordsList = [
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-   // :)
+    // :)
 }
 
+wordSearcherIgnoreCase(testTargetWordA,testWordsList)
 
 
 /*Dado un arreglo de strings, retornar la palabra más larga,
