@@ -114,8 +114,20 @@ let containerTestObject = {
     list:["Cumbamba", "Oreja", "Nariz", "Ojo", "Lengua", "Diente"]
 }
 function lettersCounter(objectContainer) {
-   // :)
+   let vowels = 0;
+   let consonants = 0;
+   objectContainer.list.forEach(word => {
+       word.toLowerCase().split('').forEach(letter => {
+           if (letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u') {
+               vowels += 1;
+           } else {
+               consonants += 1;
+           }
+       })
+   })
+   return [vowels,consonants]
 }
+console.log(lettersCounter(containerTestObject));
 
 console.log('Sexto ejercicio');
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
