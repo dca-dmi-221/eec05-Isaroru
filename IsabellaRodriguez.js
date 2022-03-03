@@ -4,9 +4,15 @@
 
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
-   let arr = testWord.split('');
+    for (let i = 0; i < word.length; i++) {
+        //console.log(word[i]);
+        let disorganized = Math.floor(Math.random()*(word.length - 0.5));
+        console.log(word[disorganized])
+    }
+/*
+   let arr = word.split('');
    arr.sort(function desordenar(){ return Math.random() -0.5})
-   console.log(arr)
+   console.log(arr)*/
 }
 wordCutter(testWord);
 
@@ -53,7 +59,9 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    // :)
+   /* let long = wordsList[i];
+    let longest = "";
+*/
 }
 
 
@@ -65,8 +73,16 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-   // :)
+   let normalized = word.replace(/[^\w]/g, '').toLowerCase();
+   let reversed = normalized.split('').reverse().join('');
+   if (word.replace(/[^\w]/g, '').toLowerCase() !== reversed) {
+      console.log(false);
+      
+   }else{
+       console.log(true);
+   }
 }
+palindromeVerifier(onVerificationWordA);
 
 
 /*Dado un objeto que contiene una lista de palabras contar el
@@ -84,10 +100,10 @@ let wordArrayA = ["hola", "¿" ,"cómo", "estás", "?"];
 let wordArrayB = ["te", "ves" ,"igual", "te", "ves", "igual"];
 
 function arrayJoiner(listA, listB) {
-    let juntar = wordArrayA.concat(wordArrayB);
-    console.log(juntar);
+    let join = listA.concat(listB);
+    console.log(join);
 }
-arrayJoiner(wordArrayA,wordArrayB)
+arrayJoiner(wordArrayA,wordArrayB);
 
 
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
