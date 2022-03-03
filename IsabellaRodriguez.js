@@ -187,7 +187,14 @@ console.log('Noveno ejercicio');
 let someWordsToTest = ["compañeros", "estudiantes", "señores", "amigos", "graduandos", "artistas", "universitarios"];
 
 function lastVocalReplacaer(words) {
-    // :)
+    let vowels = ['a','e', 'i','o' , 'u']
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].split('').reverse();
+        let letter = words[i].find((array,element,pos) => array [element] === vowels[pos]);
+        words[i] = words[i].join('').replace(letter,'x');
+        words[i] = words[i].split('').reverse().join('');
+    }
+    console.log(words)
 }
 
 lastVocalReplacaer(someWordsToTest);
