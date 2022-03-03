@@ -148,8 +148,18 @@ let testWordToExplore = "amar";
 let wordsToVerify = ["amar", "arma", "rana" , "mara", "rama", "roma", "amor", "ramon", "omar"];
 
 function anagramVerifier(wordToExplore, listOfWords) {
-   // :)
+    let posAnagram = [];
+    listOfWords.forEach((word,number) => {
+        let organizedArray = word.split('').sort().join('');
+        let organizedMethod = wordToExplore.split('').sort().join('');
+        if (organizedArray === organizedMethod) {
+            posAnagram.push(number);
+        }
+    })
+    console.log(posAnagram);
 }
+anagramVerifier(testWordToExplore,wordsToVerify);
+
 console.log('Octavo ejercicio');
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
