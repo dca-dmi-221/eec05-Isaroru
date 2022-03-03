@@ -1,22 +1,17 @@
 'use strict'
 
+console.log('Primer ejercicio');
 /*Dada una cadena de texto (string) separe y muestre en consola los caracteres de forma desordenada uno por línea, 1 caracter a la vez.*/
-
 let testWord = "esternocleidomastoideo";
 function wordCutter(word) {
     for (let i = 0; i < word.length; i++) {
-        //console.log(word[i]);
         let disorganized = Math.floor(Math.random()*(word.length - 0.5));
         console.log(word[disorganized])
     }
-/*
-   let arr = word.split('');
-   arr.sort(function desordenar(){ return Math.random() -0.5})
-   console.log(arr)*/
 }
 wordCutter(testWord);
 
-
+console.log('Segundo ejercicio');
 /*Dado un string buscar en un listado e indicar si se encuentra o no
 ahí contenido, debe soportar mayúsculas y minúsculas sin importar
 la variación, es lo mismo Carro, CARRO o carro.*/
@@ -36,12 +31,22 @@ let testWordsList = [
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-    // :)
+    let wordsList2 = wordsList.map((character) => character.toLowerCase());
+    targetWord = targetWord.toLowerCase();
+    targetWord = normalizedWord(targetWord);
+    targetWord = wordsList2.includes(targetWord);
+    console.log(targetWord);
 }
 
-wordSearcherIgnoreCase(testTargetWordA,testWordsList)
+function normalizedWord(word) {
+    return word = word.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
 
+wordSearcherIgnoreCase(testTargetWordA,testWordsList);
+wordSearcherIgnoreCase(testTargetWordB,testWordsList);
+wordSearcherIgnoreCase(testTargetWordC,testWordsList);
 
+console.log('Tercer ejercicio');
 /*Dado un arreglo de strings, retornar la palabra más larga,
 la más corta y el tamaño promedio, el arreglo debe ser
 entregado por parámetro y puede variar en cantidad de palabras
@@ -64,7 +69,7 @@ function wordLengthClassifier(wordsList) {
 */
 }
 
-
+console.log('Cuarto ejercicio');
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
 
 let onVerificationWordA = "reconocer";
@@ -84,7 +89,7 @@ function palindromeVerifier(word) {
 }
 palindromeVerifier(onVerificationWordA);
 
-
+console.log('Quinto ejercicio');
 /*Dado un objeto que contiene una lista de palabras contar el
 número de letras vocales y consonantes y retornarlo en un arreglo de 2 posiciones.*/
 let containerTestObject = {
@@ -94,7 +99,7 @@ function lettersCounter(objectContainer) {
    // :)
 }
 
-
+console.log('Sexto ejercicio');
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
 let wordArrayA = ["hola", "¿" ,"cómo", "estás", "?"];
 let wordArrayB = ["te", "ves" ,"igual", "te", "ves", "igual"];
@@ -105,7 +110,7 @@ function arrayJoiner(listA, listB) {
 }
 arrayJoiner(wordArrayA,wordArrayB);
 
-
+console.log('Séptimo ejercicio');
 /*Dado un arreglo de strings indicar qué posiciones del arreglo
 son anagramas de una palabra base (recibida como parámetro), retorne las posiciones en un arreglo.*/
 
@@ -115,7 +120,7 @@ let wordsToVerify = ["amar", "arma", "rana" , "mara", "rama", "roma", "amor", "r
 function anagramVerifier(wordToExplore, listOfWords) {
    // :)
 }
-
+console.log('Octavo ejercicio');
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
 
@@ -130,6 +135,7 @@ function vocalsRemoverFromObject(objectMultiContainer) {
 
 console.log(vocalsRemoverFromObject(testObjMultiContainer));
 
+console.log('Noveno ejercicio');
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
 
 let someWordsToTest = ["compañeros", "estudiantes", "señores", "amigos", "graduandos", "artistas", "universitarios"];
@@ -138,7 +144,7 @@ function lastVocalReplacer(words) {
     // :)
 }
 
-
+console.log('Décimo ejercicio');
 /*Dada una lista de palabras verificar si alguna de las palabras es la
 versión al revés de alguna de las palabras de una segunda lista,
 debe contar las identificadas y retornar un objeto con ese conteo.*/
